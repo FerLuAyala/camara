@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="abrirCamara">abrir Camara</button>
+    <video id="video" autoplay></video>
+    
+    <script>
+        async function abrirCamara(paams) {
+            const video=document.getElementById('video');
+
+            try {
+                const $tream= await navigator.mediaDevices.getUserMedia({video:true})
+                video.srcObject = stream;
+            } catch (error) {
+                console.log('no se pudo acceder' , error)
+            }
+            
+        }
+    </script>
+</body>
+</html>
